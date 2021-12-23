@@ -1,3 +1,9 @@
-#texto{
-    font-size: 100%;
-}
+ 
+@media (max-width: 768px) {
+    .btn-responsive {
+      padding:2px 4px;
+      font-size:90%;
+      line-height: 2;
+      border-radius:3px;
+    }
+  }
