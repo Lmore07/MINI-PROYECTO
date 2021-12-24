@@ -215,7 +215,7 @@ function generar_preg_aleatoria() {
             break;
         }
     }
-    return pregs[15];
+    return pregs[rnd];
 }
 
 function mensaje_bien() {
