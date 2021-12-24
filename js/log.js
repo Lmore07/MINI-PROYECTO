@@ -124,6 +124,7 @@ var repetidas = null;
 var num_p;
 var myObj = new Object;
 var contador = 0;
+var puntaje=0;
 
 $("#btn1").click(() => preguntar("btn1"));
 $("#btn2").click(() => preguntar("btn2"));
@@ -171,6 +172,7 @@ function preguntar(btn) {
                     }
                     if (bo) {
                         $('#' + btn).addClass('btn btn-success');
+                        puntaje++;
                         mensaje_bien();
                     } else {
                         $('#' + btn).addClass('btn btn-danger');
@@ -181,11 +183,41 @@ function preguntar(btn) {
                     });
 
                     contador++;
+                    if(contador==12){
+                        Swal.fire({
+                            title: 'TU PUNTUACION ES: '+ calc_puntaje()+' PUNTOS',
+                            width: 600,
+                            padding: '3em',
+                            color: '#716add',
+                            backdrop: `
+                              rgba(0,0,123,0.4)
+                              url("/images/nyan-cat.gif")
+                              left top
+                              no-repeat
+                            `
+                          })
+                    }
                 } else {
                     delete repetidas[num_p.toString()];
                 }
             });
     }
+}
+
+if(contador==12){
+    Swal.fire({
+        title: 'Custom width, padding, color, background.',
+        width: 600,
+        padding: '3em',
+        color: '#716add',
+        background: '#fff url(/images/trees.png)',
+        backdrop: `
+          rgba(0,0,123,0.4)
+          url("/images/nyan-cat.gif")
+          left top
+          no-repeat
+        `
+      })
 }
 
 function ver_repetidas(preg) {
@@ -195,6 +227,11 @@ function ver_repetidas(preg) {
         }
     }
     return false;
+}
+
+function calc_puntaje(){
+    var total= Math.round((puntaje*100)/12,2);
+    return total.toString();
 }
 
 function generar_preg_aleatoria() {
