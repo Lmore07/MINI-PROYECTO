@@ -1,29 +1,27 @@
 var Datos;
-$("#login").click(function() {
+$("#registrar").click(() => {
     Datos = {
-        "Email": $("#correo").val(),
-        "Password": $("#password").val(),
-        "Politica":comprobar_check()
+        "Nombres": $("#nombre").val(),
+        "Apellidos": $("#apellidos").val(),
+        "Direccion": $("#direccion").val(),
+        "Celular": $("#celular").val(),
+        "Correo": $("#correo").val(),
+        "Genero": $("#genero").val(),
+        "Password": $("#password").val()
     };
+
     if (verficarCampos()) {
-        if(comprobar_check()=="true"){
-            mensaje_time();
-        }else{
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'SELECCIONA LA CASILLA PARA CONTINUAR'
-              })
-        }
+        mensaje_time();
     }
     else{
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'INGRESA DATOS VALIDOS'
+            text: 'INGRESA TODOS LOS CAMPOS'
           })
     }
 });
+
 $("#show_password").click( function(){
     var cambio = document.getElementById("password");
 		if(cambio.type == "password"){
@@ -35,18 +33,10 @@ $("#show_password").click( function(){
 		}
 });
 
-function comprobar_check(){
-    if($('#politica').prop('checked')) {
-        return "true";
-    }else{
-        return "false";
-    }
-}
-
-function verficarCampos(){
+const verficarCampos = () => {
     let completos = true;
     for (const x in Datos) {
-        if (Datos[x].trim() == "") {
+        if (Datos[x].trim() === "") {
             completos = false;
             break;
         }

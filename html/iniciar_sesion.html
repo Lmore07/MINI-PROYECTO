@@ -1,55 +1,68 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <TITLe>INICIO DE SESION</TITLe>
-        <link rel="stylesheet" href="../css/form.css">
-        <style>
-            body{
-                background: #ffe259;
-                background: linear-gradient(to rightm,#ffa751 #ffe259);
-                height: max-content;
-            }
-            #bb{
-                display: grid;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container-fluid w-75 mt-3 rounded-sm col-5 pt-xl-2 pb-xl-2">
-            <div class="row align-items-stretch justify-content-lg-center">
-                
-                <div class="col bg-white p-2 rounded-end">
-                    <div class="text-end">
 
-                    </div>
-                    <h2 class="fw-bold text-center py-4">Bienvenido</h2>
-                    <form action="">
-                        <div class="mb-4">
-                            <label for="correo" class="form-label">Correo:</label>
-                            <input type="email" name="correo" value="" id="correo" class="form-control"  placeholder="email@example.com">
-                        </div>
-                        <div class="mb-4">
-                            <label for="password" class="form-label">Contraseña:</label>
-                            <input type="password" name="password" value="" id="password" class="form-control"  placeholder="Ingrese su contraseña">
-                        </div>
-                        <div class="mb-4 form-check">
-                            <input class="form-check-input" type="checkbox" id="politica">
-                            <label class="form-check-label" for="politica">He leido los <a href="">terminos y condiciones</a>.</label>
-                        </div>
-                        <div class="mb-4" id="bb">
-                            <button type="button" id="login" name="login" class="btn btn-primary">Iniciar Sesion</button>
-                        </div>
-                        <div class="my-3">
-                            <span>¿Aún no tienes cuenta? <a href="">Registrate aquí</a></span><br>
-                            <span><a href="">Recuperar contraseña</a></span>
-                        </div>
-                    </form>
+<head>
+    <meta charset="utf-8">
+    <TITLe>INICIO DE SESION</TITLe>
+    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #ffe259;
+            background: linear-gradient(to rightm, #ffa751 #ffe259);
+            height: max-content;
+        }
+
+        #bb {
+            display: grid;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid w-75 mt-3 rounded-sm col-5 pt-xl-2 pb-xl-2">
+        <div class="row align-items-stretch justify-content-lg-center">
+
+            <div class="col bg-white p-2 rounded-end">
+                <div class="text-end">
+
                 </div>
+                <h2 class="fw-bold text-center py-4">Bienvenido</h2>
+                <form action="">
+                    <div class="mb-4">
+                        <label for="correo" class="form-label">Correo:</label>
+                        <input type="email" name="correo" value="" id="correo" class="form-control"
+                            placeholder="email@example.com" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="col-form-label">Contraseña:</label>
+                        <div class="input-group">
+                            <input ID="password" type="Password" Class="form-control" placeholder="********">
+                            <div class="input-group-append">
+                                  <button id="show_password" class="btn btn-primary" type="button"> <span class="fa fa-eye-slash icon"></span> </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4 form-check">
+                        <input class="form-check-input" type="checkbox" id="politica">
+                        <label class="form-check-label" for="politica">He leido los <a href="">terminos y
+                                condiciones</a>.</label>
+                    </div>
+                    <div class="mb-4" id="bb">
+                        <button type="button" id="login" name="login" class="btn btn-primary">Iniciar Sesion</button>
+                    </div>
+                    <div class="my-3">
+                        <span>¿Aún no tienes cuenta? <a href="form.html">Registrate aquí</a></span><br>
+                        <span><a href="">Recuperar contraseña</a></span>
+                    </div>
+                </form>
             </div>
         </div>
-        <SCript src="../js/jquery.js"></SCript>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <SCript src="../js/inicio_sesion.js"></SCript>
-    </body>
+    </div>
+    <SCript src="../js/jquery.js"></SCript>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <SCript src="../js/inicio_sesion.js"></SCript>
+</body>
+
 </html>
