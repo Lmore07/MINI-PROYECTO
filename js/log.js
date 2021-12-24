@@ -199,7 +199,7 @@ function ver_repetidas(preg) {
 
 function generar_preg_aleatoria() {
     while (true) {
-        var rnd = Math.ceil(Math.random() * (12 - 0) + 0);
+        var rnd = Math.ceil(Math.random() * (30 - 0) + 0);
         if (repetidas == null) {
             num_p = rnd.toString();
             var num = rnd.toString();
